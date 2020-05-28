@@ -11,5 +11,9 @@ class Genre
   def self.all
     @@all
   end
+  def artists
+    array = Song.all.select {|song| song.genre == self}
+    array.map {|song| song.artist}
+  end
 
 end
